@@ -1,6 +1,6 @@
 **Currency tracker application**</br>
 
-The application runs on the default **port 8080**. It exposes one endpoint (below):</br>
+The application runs on the default **port 8080**. It exposes one endpoint for all data bundled together (below):</br>
 
 localhost:8080/pairs</br>
 
