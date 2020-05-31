@@ -19,7 +19,7 @@ public class CurrencyController {
         this.currencyService = currencyService;
     }
 
-    @GetMapping(value = "pair/{pair}")
+    @GetMapping(value = "pairs/{pair}")
     public OutputCurrencyPairDetails getCurrencyPair(@PathVariable String pair) {
         return currencyService.getOutput(pair);
     }
