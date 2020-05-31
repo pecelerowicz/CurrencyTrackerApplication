@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Collection;
+
 @RestController
 public class CurrencyController {
 
@@ -17,9 +19,14 @@ public class CurrencyController {
         this.currencyService = currencyService;
     }
 
-    @GetMapping(value = "currency/{pair}")
+    @GetMapping(value = "pair/{pair}")
     public OutputCurrencyPairDetails getCurrencyPair(@PathVariable String pair) {
         return currencyService.getOutput(pair);
+    }
+
+    @GetMapping(value = "pairs")
+    public Collection<OutputCurrencyPairDetails> getCurrencyPairs() {
+        return currencyService.getOutput();
     }
 
 }

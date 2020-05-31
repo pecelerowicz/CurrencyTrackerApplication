@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -46,6 +47,11 @@ public class CurrencyServiceImpl implements CurrencyService {
         return outputMap.get(CurrencyPair.fromOutId(pair.toUpperCase()));
     }
 
+    @Override
+    public Collection<OutputCurrencyPairDetails> getOutput() {
+        return outputMap.values();
+    }
+
     private OutputCurrencyPairDetails inputOutputTransform(InputCurrencyPairDetails inputCurrencyPairDetails) {
         return new OutputCurrencyPairDetails(
                 CurrencyPair.fromInId(inputCurrencyPairDetails.getInId()).getOutId(),
@@ -54,4 +60,6 @@ public class CurrencyServiceImpl implements CurrencyService {
                 Double.valueOf(inputCurrencyPairDetails.getPrice()),
                 inputCurrencyPairDetails.getTime().toLocalTime().format(TIME_FORMATTER));
     }
+
+
 }
