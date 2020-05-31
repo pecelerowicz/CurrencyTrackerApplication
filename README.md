@@ -1,6 +1,6 @@
 **Currency tracker application**</br>
 
-The application runs on the default **port 8080**. It exposes one endpoint and **accetpts 4 values** (currency pair identificator is case insensitive):</br>
+The application runs on the default **port 8080**. It exposes one endpoint and accetps **values listed below** (currency pair identificator is case insensitive):</br>
 
 localhost:8080/currency/btcusd</br>
 localhost:8080/currency/ethusd</br>
