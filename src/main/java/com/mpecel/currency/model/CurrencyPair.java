@@ -32,7 +32,7 @@ public enum CurrencyPair {
             return BTCEUR;
         if(inId.equals(BTCUSD.inId))
             return BTCUSD;
-        return BTCUSD;
+        throw new RuntimeException("Wrong address!");
     }
 
     public static CurrencyPair fromOutId(String outId) {
@@ -44,6 +44,6 @@ public enum CurrencyPair {
             return BTCEUR;
         if(outId.equals(BTCUSD.outId))
             return BTCUSD;
-        return BTCUSD;
+        throw new RuntimeException("Wrong address!");
     }
 }
